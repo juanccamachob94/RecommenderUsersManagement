@@ -132,3 +132,4 @@ dmypy.json
 .pyre/
 
 # The next configurations are customized (start here please)
+.DS_Store

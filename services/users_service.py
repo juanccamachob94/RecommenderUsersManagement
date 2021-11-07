@@ -1,8 +1,12 @@
+import sys
+sys.path.append('../')
+
+from services.user_creator_service import UserCreatorService
+
 class UsersService:
     @classmethod
     def create(cls, user):
-        print("Creando el usuario" +  user)
-
+        UserCreatorService.perform(user)
 
     @classmethod
     def update(cls, user):
