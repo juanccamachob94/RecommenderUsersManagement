@@ -1,0 +1,36 @@
+import os
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
+class AmazonCredentialsContainer:
+    CREDENTIALS_TYPE = None
+
+    def __init__(self):
+        credentials_type = self.__class__.CREDENTIALS_TYPE
+        self.access_key_id = os.environ[f'{credentials_type}_ACCESS_KEY_ID']
+        self.secret_key = os.environ[f'{credentials_type}_AWS_SECRET_KEY']
+        self.bucket_name = os.environ[f'{credentials_type}_AWS_BUCKET_NAME']
+        self.relative_path = os.environ[f'{credentials_type}_AWS_RELATIVE_PATH']
+        self.root_path = os.environ[f'{credentials_type}_AWS_ROOT_PATH']
+
+
+    def get_access_key_id(self):
+        return self.access_key_id
+
+
+    def get_secret_key(self):
+        return self.secret_key
+
+
+    def get_bucket_name(self):
+        return self.bucket_name
+
+
+    def get_relative_path(self):
+        return self.relative_path
+
+
+    def get_root_path(self):
+        return self.root_path

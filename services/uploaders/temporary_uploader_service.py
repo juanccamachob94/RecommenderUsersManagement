@@ -20,9 +20,10 @@ class TemporaryUploaderService:
 
     @classmethod
     def __build_suffix(cls, resource_absolute_route):
-        if '.' not in resource_absolute_route:
+        extension = UrlHelper.extension(resource_absolute_route)
+        if extension == '':
             return ''
-        return f'.{UrlHelper.extension(resource_absolute_route)}'
+        return f'.{extension}'
     
     @classmethod
     def __copy(cls, resource_absolute_route, temporary_file_wrapper_absolute_route):

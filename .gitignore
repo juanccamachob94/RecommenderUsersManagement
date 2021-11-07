@@ -132,4 +132,9 @@ dmypy.json
 .pyre/
 
 # The next configurations are customized (start here please)
+
+# MAC file automatically generated
 .DS_Store
+
+# personal development notes
+.notes
