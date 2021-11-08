@@ -1,9 +1,4 @@
 import boto3
-
-from dotenv import load_dotenv
-
-load_dotenv()
-
 class AmazonS3Client:
     instance = None
 
@@ -27,7 +22,7 @@ class AmazonS3Client:
 
 
     def __upload(self, output_relative_route, input_absolute_route, content_type):
-        print('subiendo...')
+        print('subiendo archivo CSV?...')
     
 
     def __connect(self):

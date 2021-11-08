@@ -1,7 +1,3 @@
-import sys
-
-sys.path.append('../')
-
 from helpers.string_helper import StringHelper
 
 class UrlHelper:

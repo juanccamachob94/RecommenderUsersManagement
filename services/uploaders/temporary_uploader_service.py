@@ -1,7 +1,6 @@
 import shutil
 import tempfile
 import urllib.request
-import time
 from helpers.url_helper import UrlHelper
 
 class TemporaryUploaderService:

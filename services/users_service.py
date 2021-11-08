@@ -1,6 +1,3 @@
-import sys
-sys.path.append('../')
-
 from services.user_creator_service import UserCreatorService
 
 class UsersService:

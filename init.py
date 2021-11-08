@@ -1,4 +1,7 @@
 import ssl
+import sys
+
+sys.path.append('./')
 
 from clients.client import Client
 
@@ -12,4 +15,4 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-print(type(os.environ.get('PRUEBA')))
+print(os.environ.get(''))
