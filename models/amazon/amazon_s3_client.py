@@ -1,4 +1,5 @@
-import boto3
+import boto
+from boto.s3.key import Key
 class AmazonS3Client:
     instance = None
 
@@ -26,5 +27,5 @@ class AmazonS3Client:
     
 
     def __connect(self):
-        return boto3.resource('s3', self.amazon_credentials_container.get_access_key_id(), \
+        return boto.connect_s3(self.amazon_credentials_container.get_access_key_id(), \
             self.amazon_credentials_container.get_secret_key())

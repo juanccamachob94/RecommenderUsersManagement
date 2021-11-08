@@ -1,3 +1,7 @@
+"""
+    A instance of this class should not be considered valid! It contains the default paramenters
+    to use on specific case based on credentials type
+"""
 import os
 
 from dotenv import load_dotenv
@@ -9,11 +13,11 @@ class AmazonCredentialsContainer:
 
     def __init__(self):
         credentials_type = self.__class__.CREDENTIALS_TYPE
-        self.access_key_id = os.environ[f'{credentials_type}_ACCESS_KEY_ID']
-        self.secret_key = os.environ[f'{credentials_type}_AWS_SECRET_KEY']
-        self.bucket_name = os.environ[f'{credentials_type}_AWS_BUCKET_NAME']
-        self.relative_path = os.environ[f'{credentials_type}_AWS_RELATIVE_PATH']
-        self.root_path = os.environ[f'{credentials_type}_AWS_ROOT_PATH']
+        self.access_key_id = os.environ[f'AWS_{credentials_type}_ACCESS_KEY_ID']
+        self.secret_key = os.environ[f'AWS_{credentials_type}_SECRET_KEY']
+        self.bucket_name = os.environ[f'AWS_{credentials_type}_BUCKET_NAME']
+        self.relative_path = os.environ[f'AWS_{credentials_type}_RELATIVE_PATH']
+        self.root_path = os.environ[f'AWS_{credentials_type}_ROOT_PATH']
 
 
     def get_access_key_id(self):
