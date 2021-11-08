@@ -18,6 +18,7 @@ class AmazonCredentialsContainer:
         self.bucket_name = os.environ[f'AWS_{credentials_type}_BUCKET_NAME']
         self.relative_path = os.environ[f'AWS_{credentials_type}_RELATIVE_PATH']
         self.root_path = os.environ[f'AWS_{credentials_type}_ROOT_PATH']
+        self.region = os.environ[f'AWS_{credentials_type}_REGION']
 
 
     def get_access_key_id(self):
@@ -38,3 +39,7 @@ class AmazonCredentialsContainer:
 
     def get_root_path(self):
         return self.root_path
+
+
+    def get_region(self):
+        return self.region
