@@ -1,9 +1,6 @@
 import os
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
-
-from models.amazon.amazon_default_credentials_container import AmazonDefaultCredentialsContainer
-from models.amazon.amazon_s3_client import AmazonS3Client
 class Clase:
     XYZ = 123
     @classmethod
@@ -40,9 +37,22 @@ class Clase3:
 class Clase4(Clase3):
     pass
 
+import csv
 
+my_generator = csv_rows()
+
+while True:
+    try:
+        row = next(my_generator)
+    except StopIteration:
+        break
 
 # Clase.foo()
 # Clase2().launch()
 #AmazonS3Client.upload_file(AmazonDefaultCredentialsContainer(), 'jisoo1.jpg',
 #                          'jisoo.jpg', 'text/csv')
+
+
+
+def metodo(**algo):
+    print(algo)

@@ -16,4 +16,5 @@ class DataManagementService:
     @classmethod
     def append(cls, file, model):
         if UrlHelper.extension(file.name) == 'csv':
-            CSVManagementService.append_row(file.name, model)
+            return CSVManagementService.append_row(file, model, { 0: model.get_id() })
+        return False
