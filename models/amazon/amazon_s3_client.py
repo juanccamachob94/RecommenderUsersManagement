@@ -1,4 +1,5 @@
 import boto3
+
 from botocore.exceptions import NoCredentialsError
 from helpers.url_helper import UrlHelper
 from helpers.file_helper import FileHelper
@@ -38,4 +39,4 @@ class AmazonS3Client:
         except FileNotFoundError:
             raise 'The file was not found'
         except NoCredentialsError:
-            raise 'Credentials not available'
+            raise 

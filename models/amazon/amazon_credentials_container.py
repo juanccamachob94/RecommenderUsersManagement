@@ -1,6 +1,7 @@
 """
     A instance of this class should not be considered valid! It contains the default paramenters
-    to use on specific case based on credentials type
+    to use on specific case based on credentials type.
+    Its instance is managed by AmazonCredentialsContainerFactory class
 """
 import os
 

@@ -27,7 +27,32 @@ class Clase2(Clase):
         print(self.__class__.XYZ)
 
 
+
+class Clase3:
+    instance = None
+
+    @classmethod
+    def get_instance(cls):
+        if not cls.instance:
+            cls.instance = cls()
+        return cls.instance
+
+class Clase4(Clase3):
+    pass
+
+clase3 = Clase3.get_instance()
+clase3_1 = Clase3.get_instance()
+clase4 = Clase4.get_instance()
+clase4_1 = Clase4.get_instance()
+
+
+print(id(clase3), str(type(clase3)))
+print(id(clase3_1), str(type(clase3_1)))
+print(id(clase4), str(type(clase4)))
+print(id(clase4_1), str(type(clase4_1)))
+
+
 # Clase.foo()
 # Clase2().launch()
-AmazonS3Client.upload_file(AmazonDefaultCredentialsContainer(), 'jisoo1.jpg',
-                           'jisoo.jpg', 'text/csv')
+#AmazonS3Client.upload_file(AmazonDefaultCredentialsContainer(), 'jisoo1.jpg',
+#                          'jisoo.jpg', 'text/csv')
