@@ -44,3 +44,7 @@ class AmazonCredentialsContainer:
 
     def get_region(self):
         return self.region
+
+    
+    def get_absolute_path(self):
+        return self.get_root_path() + self.get_relative_path()

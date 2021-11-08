@@ -1,8 +1,11 @@
 from services.storages.storage_service import StorageService
+from helpers.file_helper import FileHelper
+from services.data_management_service import DataManagementService
+
 class UserCreatorService:
     @classmethod
-    def perform(cls, user, data_manager):
-        print('Se ha mandado al usuario' + str(type(user)))
-        StorageService.perform('input', 'output', 'content_type')
-        print('Se ha terminado de ejecutar')
-        
+    def perform(cls, user, input_file_absolute_route, output_relative_route):
+        temporary_file = DataManagementService.read(input_file_absolute_route, user)
+        DataManagementService.append(temporary_file, user)
+        StorageService.perform(temporary_file.name, output_relative_route,
+            FileHelper.content_type(input_file_absolute_route))

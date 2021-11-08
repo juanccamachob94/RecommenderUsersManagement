@@ -40,16 +40,6 @@ class Clase3:
 class Clase4(Clase3):
     pass
 
-clase3 = Clase3.get_instance()
-clase3_1 = Clase3.get_instance()
-clase4 = Clase4.get_instance()
-clase4_1 = Clase4.get_instance()
-
-
-print(id(clase3), str(type(clase3)))
-print(id(clase3_1), str(type(clase3_1)))
-print(id(clase4), str(type(clase4)))
-print(id(clase4_1), str(type(clase4_1)))
 
 
 # Clase.foo()

@@ -1,5 +1,7 @@
 import os
 
+from helpers.url_helper import UrlHelper
+
 class FileHelper:
     @classmethod
     def file_size(cls, file):
@@ -12,6 +14,13 @@ class FileHelper:
             return cls.__file_size_based_on_file_descriptor(file)
         except:
             return cls.__file_size_based_on_file_seek(file)
+
+    @classmethod
+    def content_type(cls, file_route):
+        extension = UrlHelper.extension(file_route)
+        if extension == 'csv':
+            return 'text/csv'
+        return None
 
 
     @classmethod

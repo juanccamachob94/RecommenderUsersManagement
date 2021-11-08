@@ -9,7 +9,7 @@ class UrlHelper:
     @classmethod
     def extension(cls, url):
         name_and_extension = cls.name_with_extension(url)
-        if '.' in name_and_extension:
+        if '.' not in name_and_extension:
             return ''
         return StringHelper.last_substring(name_and_extension, '.')
 
