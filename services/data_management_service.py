@@ -18,3 +18,9 @@ class DataManagementService:
         if UrlHelper.extension(file.name) == 'csv':
             return CSVManagementService.append_row(file, model, { 0: model.get_id() })
         return False
+    
+    @classmethod
+    def append_or_update(cls, file, model):
+        if UrlHelper.extension(file.name) == 'csv':
+            return CSVManagementService.append_or_update_row(file, model, { 0: model.get_id() })
+        return False
